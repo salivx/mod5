@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center mt-5">
+            <h1>Our Restaurant</h1>
+            <img src="logo.png" alt="Restaurant Logo" onclick="loadHomePage()" style="cursor:pointer;">
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-4">
+            <div class="card" style="cursor:pointer;" onclick="loadMenuItems()">
+                <div class="card-body">
+                    <h5 class="card-title">Specials</h5>
+                    <p class="card-text">Click to see today's specials!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Placeholder for the menu items -->
+    <div id="menuItems" class="row mt-3"></div>
+</div>
+
+<script>
+const categories = [
+    {short_name: "LN", name: "Lunch"},
+    {short_name: "DN", name: "Dinner"},
+    {short_name: "SU", name: "Sushi"},
+    {short_name: "BR", name: "Breakfast"}
+];
+
+function getRandomCategory() {
+    const randomIndex = Math.floor(Math.random() * categories.length);
+    return categories[randomIndex];
+}
+
+function loadMenuItems() {
+    const category = getRandomCategory();
+    // Simulate loading menu items for the category
+    $("#menuItems").html(`<div class="col-sm-12"><h3>${category.name}</h3><p>Items for ${category.short_name}...</p></div>`);
+}
+
+function loadHomePage() {
+    $("#menuItems").html('');
+}
+</script>
