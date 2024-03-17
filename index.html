@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu - Enhanced</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 0.5s;
+        }
+        .fade-enter, .fade-leave-to  {
+            opacity: 0;
+        }
+        img.logo {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        img.logo:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center mt-5">
+            <h1>Our Restaurant</h1>
+            <img src="logo.png" class="logo" alt="Restaurant Logo" onclick="loadHomePage()" style="cursor:pointer;">
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-4">
+            <div class="card" style="cursor:pointer;" onclick="loadMenuItems()">
+                <div class="card-body">
+                    <h5 class="card-title">Specials</h5>
+                    <p class="card-text">Discover our special dishes!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div id="menuItems" class="row mt-3"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</body>
+</html>
